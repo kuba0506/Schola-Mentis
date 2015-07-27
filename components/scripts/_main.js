@@ -2,11 +2,11 @@ var scholaMentis = function () {
 
 
 
+// =include dropdown.js
 /// =include menu-mobile.js
 /// =include scrollTotop.js
 /// =include cycle.js
 /// =include lightbox.js
-/// =include dropdown.js
 /// =include toggle.js
 /// =include validator.js
 /// =include tooltips.js

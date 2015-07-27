@@ -54,10 +54,10 @@
         box-shadow: $x $y $blur $spread $color;
 }
 
-@mixin boxsh-in() {
- -webkit-box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
--moz-box-shadow:    inset 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
-box-shadow:         inset 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+@mixin boxsh() {
+ -webkit-box-shadow: 0px 0px 20px 0px rgba(10, 44, 105, 0.1);
+-moz-box-shadow:    0px 0px 20px 0px rgba(10, 44, 105, 0.1);
+box-shadow:         0px 0px 20px 0px rgba(10, 44, 105, 0.1);
 }
 
 @mixin boxsh-out() {
@@ -66,8 +66,15 @@ box-shadow:         inset 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
 box-shadow:         0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
-@mixin linear-g-red() {
-  background: rgba(247, 208, 212, 1); background: -moz-linear-gradient(top, rgba(247, 208, 212, 1) 0%, rgba(247, 181, 191, 1) 100%); background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(247, 208, 212, 1)), color-stop(100%, rgba(247, 181, 191, 1))); background: -webkit-linear-gradient(top, rgba(247, 208, 212, 1) 0%, rgba(247, 181, 191, 1) 100%); background: -o-linear-gradient(top, rgba(247, 208, 212, 1) 0%, rgba(247, 181, 191, 1) 100%); background: -ms-linear-gradient(top, rgba(247, 208, 212, 1) 0%, rgba(247, 181, 191, 1) 100%); background: linear-gradient(to bottom, rgba(247, 208, 212, 1) 0%, rgba(247, 181, 191, 1) 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7d0d4', endColorstr='#f7b5bf', GradientType=0);
+@mixin linear() {
+  background: rgba(2,209,245,1);
+  background: -moz-linear-gradient(-45deg, rgba(2,209,245,1) 0%, rgba(0,165,235,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(2,209,245,1)), color-stop(100%, rgba(0,165,235,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(2,209,245,1) 0%, rgba(0,165,235,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(2,209,245,1) 0%, rgba(0,165,235,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(2,209,245,1) 0%, rgba(0,165,235,1) 100%);
+  background: linear-gradient(135deg, rgba(2,209,245,1) 0%, rgba(0,165,235,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02d1f5', endColorstr='#00a5eb', GradientType=1 );
 }
 
 @mixin linear-g-blue() {

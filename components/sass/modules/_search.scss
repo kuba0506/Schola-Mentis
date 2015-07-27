@@ -2,7 +2,6 @@
 * @SEARCH
  */
 
-
 .search {
   float: left;
   width: 100%;
@@ -13,40 +12,40 @@
   // margin: 0;
   margin: 10px 0;
   }
-.search legend {
+.search-schola legend {
   display: none;
 }
 
-.input--solokolos, .input--solokolos-full {
-  // width: 425px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  font-size: 18px;
-  line-height: 15px;
-}
-.input--solokolos {
-  width: 84%;
-  height: 70px;
-}
-.button--solokolos {
-  // width: 70px;
-  width: 14%;
-  margin-left: 2%;
-  height: 70px;
-  line-height: 70px;
-  padding: 0;
-  .icon-search {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 35px;
-
-  }
-}
 .button--submit {
   margin-top: 10px;
   float: none;
 }
 
+// .input--solokolos, .input--solokolos-full {
+//   // width: 425px;
+//   -webkit-border-radius: 2px;
+//   border-radius: 2px;
+//   font-size: 18px;
+//   line-height: 15px;
+// }
+// .input--solokolos {
+//   width: 84%;
+//   height: 70px;
+// }
+// .button--solokolos {
+//   // width: 70px;
+//   width: 14%;
+//   margin-left: 2%;
+//   height: 70px;
+//   line-height: 70px;
+//   padding: 0;
+//   .icon-search {
+//     display: inline-block;
+//     vertical-align: middle;
+//     font-size: 35px;
+
+//   }
+// }
 
 // fieldset.search {
 //   border: none; }

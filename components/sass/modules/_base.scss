@@ -13,12 +13,12 @@ body {
   font-size: $normal-size;
   line-height: $line-height;
   color: $black;
-  background: $white;
+  background: url('../images/bg.jpg') no-repeat center top #f6f6f6;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 1060px;
   width: 90%;
   @include clearfix;
   // padding: 0 20px;

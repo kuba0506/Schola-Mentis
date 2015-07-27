@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontur Druk</title>
+  <title>Schola Mentis</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="Redhand.pl - Strony Internetowe Częstochowa">
@@ -16,61 +16,73 @@
 <body>
   <header class="header relative">
 
-    <div class="header-top">
       <div class="container">
 
         <div class="top-info no-mobile">
-          <div class="mail">
-            <i class="icon icon-mail"></i>
-            <a href="mailto:biuro@konturdruk.pl">biuro@konturdruk.pl</a>
+          <div class="top-item home">
+            <a href="#">strona główna</a>
           </div>
-          <div class="phone">
-            <i class="icon icon-phone"></i>
-            <a href="tel:48785658954">+48 785 658 954</a>
+          <div class="top-item about-us">
+            <a href="#">o nas</a>
+          </div>
+          <div class="top-item offer">
+            <a href="#">oferta</a>
+          </div>
+          <div class="top-item contact">
+            <a href="#">kontakt</a>
           </div>
         </div>
-        <div class="top-lang">
-          <a href="#" class="active">PL</a>
-          <a href="#">EN</a>
-        </div>
-
+      
+      <div class="top-logo">
+        <h1 class="logo" role="banner">
+          <a href="#" rel="home">
+            <img src="images/logo.png" alt="EXAMPLE">
+          </a>
+        </h1>
+        <fieldset class="search-schola">
+          <legend>Szukaj</legend>
+          <form novalidate="novalidate" role="search" method="get" action="produkty,szukaj">
+            <input type="text" placeholder="Szukaj w sklepie..." name="q" class="input input-search">
+            <button class="button button-search" type="submit">Szukaj</button>
+          </form>
+        </fieldset>
       </div>
-    </div>
-
-    <div class="container" role="banner">
-      <h1 class="logo">
-        <a href="#" rel="home">
-          <img src="images/logo.png" alt="EXAMPLE">
-        </a>
-        <a href="#" rel="home" class="logo-hover no-mobile">
-          <img src="images/logo-hover.png" alt="EXAMPLE">
-        </a>
-      </h1>
       
       <nav class="nav" role="navigation">
         <button class="mobile-menu" type="button"><span>Mobile Menu</span></button>
         <div class="ul-wrapper">
           <ul class="menu">
             <li class="dropdown" data-dropdown>
-                <a href="#" class="triangle">o nas</a>
+                <a href="#" class="triangle">rozwój fizyczny</a>
                 <ul class="submenu" data-dropdown-content>
                   <li><a href="#">sitodruk</a></li>
                   <li><a href="#">termotransfer</a></li>
-                  <li><a href="#">haft komputerowy</a></li>
+                  <li>
+                    <div class="relative">
+                    <a href="#" class="sublink-2">haft komputerowy</a>
+                      <ul class="submenu-2">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                        <li><a href="#">link4</a></li>
+                        <li><a href="#">link5</a></li>
+                        <li><a href="#">link6</a></li>
+                      </ul>
+                    </div>
+                  </li>
                   <li><a href="#">sublimacja</a></li>
                   <li><a href="#">dtg</a></li>
                   <li><a href="#">tempodruk</a></li>
                 </ul>
             </li>
-            <li><a href="#" class="triangle">oferta</a></li>
-            <li><a href="#" class="triangle">techniki zdobienia</a></li>
-            <li><a href="#" class="triangle">kontakt</a></li>
-            <li class="fb"><a href="#"></a></li>
+            <li><a href="#" class="triangle">rozwój umysłowy</a></li>
+            <li><a href="#" class="triangle">rozwój społeczno-emocjonalny</a></li>
+            <li><a href="#" class="triangle">rozwój duchowy</a></li>
+            <li><a href="#">nowa szkoła</a></li>
           </ul>
         </div>
       </nav>
-
-    </div><!-- /container-header -->
+    </div>  
   </header>
 
   <main role="main" class="main">
