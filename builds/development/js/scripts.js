@@ -1,4 +1,25 @@
 var scholaMentis = function () {
+
+/**
+ * Social tabs
+ */
+if ($(window).width() > 768) {
+    new SocialTabs({
+        facebook: 'http://www.facebook.com/FacebookDevelopers', // Link do fanpage
+        newsletter:   '<div class="newsletter-box">\
+        <p class="hide-tablet">Zapisz się do naszego newslettera aby być informowany o nowościach i promocjach</p>\
+        <form action="?" method="post"  data-ajax-loading="#newsletter-loading" data-ajax="newsletter,add">\
+          <p class="clearfix">\
+            <input type="email" required="required" class="tooltip-left"  name="email" placeholder="Podaj adres e-mail...">\
+            <input type="submit" value="" name="newsletter-submit">\
+          </p>\
+          <div id="newsletter-loading" class="loading loading--full hide"></div>\
+        </form>\
+    </div>' // Link do strony g+
+    }
+    );
+
+}
 /*
     ########  ########   #######  ########  ########   #######  ##      ## ##    ##
     ##     ## ##     ## ##     ## ##     ## ##     ## ##     ## ##  ##  ## ###   ##
@@ -17,16 +38,18 @@ var scholaMentis = function () {
             timer_time = 350;
 
         dropdowns.on('click mouseenter mouseleave', function(event) {
-            if (event.type === 'mouseleave') {
-                timer = setTimeout(function() {
-                    if (open) {
-                        open.removeClass(open_class);
-                        open_content.hide();
-                        open_content = open = false;
-                    }
-                }, timer_time);
-            } else {
-                clearTimeout(timer);
+            if ($(window).width() > 768) {
+                if (event.type === 'mouseleave') {
+                    timer = setTimeout(function() {
+                        if (open) {
+                            open.removeClass(open_class);
+                            open_content.hide();
+                            open_content = open = false;
+                        }
+                    }, timer_time);
+                } else {
+                    clearTimeout(timer);
+                }
             }
             if ($(event.target).closest('[data-dropdown-content]').length) {
                 return;
@@ -49,20 +72,22 @@ var scholaMentis = function () {
                     content.hide();
                 }
             } else if (event.type === 'mouseenter') {
-                if (open) {
-                    open.removeClass(open_class);
-                    open_content.hide();
-                    content.show();
-                    link.addClass(open_class);
-                    open = link;
-                    open_content = content;
-                } else {
-                    //dodano 16.01.15
-                    link.addClass(open_class);
-                    content.show();
-                    open = link;
-                    open_content = content;
-                }
+                if ($(window).width() > 768) {
+                    if (open) {
+                        open.removeClass(open_class);
+                        open_content.hide();
+                        content.show();
+                        link.addClass(open_class);
+                        open = link;
+                        open_content = content;
+                    } else {
+                        //dodano 16.01.15
+                        link.addClass(open_class);
+                        content.show();
+                        open = link;
+                        open_content = content;
+                    }
+                }   
             }
         });
 
@@ -76,7 +101,79 @@ var scholaMentis = function () {
     })();
 
 
-/// =include menu-mobile.js
+/*
+    ######## ########  ######## ########
+       ##    ##     ## ##       ##
+       ##    ##     ## ##       ##
+       ##    ########  ######   ######
+       ##    ##   ##   ##       ##
+       ##    ##    ##  ##       ##
+       ##    ##     ## ######## ########
+*/
+    $('[data-tree]').each(function() {
+
+        var container = $(this),
+            open = container.data('tree'),
+            span = container.find('span');
+
+            span.next('ul').hide();
+
+        if (open) {
+            open = $('#'+open).addClass('active');
+            open.parents('ul').show();
+            open.parents('li').addClass('open');
+            open.children('a').next('ul').show();
+            open.children('span').next('ul').show();
+        }
+
+        // container.on('click', 'a', function(event){
+        container.on('click', 'a', function(event){
+            if ($(this).next('ul').size()) {
+
+                if (!$(this).hasClass('js-go')) {
+
+                    var a = $(this),
+                        li = a.parent('li'),
+                        next = a.next('ul'),
+                        speed = 200;
+
+                    if (li.hasClass('open')) {
+                        // Zamykamy
+                        var sub_li = next.find('li.open'),
+                            sub_menu = sub_li.find('ul');
+                        next.slideUp(speed);
+                        li.removeClass('open');
+                        sub_menu.slideUp(speed);
+                        sub_li.removeClass('open');
+                    } else {
+                        var sib_li = li.siblings().add(li.siblings().find('li.open')),
+                            sib_menu = li.siblings('.open').find('ul');
+                        // Otwieramy
+                        next.slideDown(speed);
+                        li.addClass('open');
+                        sib_li.removeClass('open');
+                        sib_menu.slideUp(speed);
+                    }
+                    event.preventDefault();
+                }
+            }
+        });
+    });
+//Menu mobilne
+    $('.mobile-menu').on('click', function () {
+        $(this).toggleClass('mobile-menu--rotate');
+
+        $('.ul-wrapper').toggleClass('menu-toggle');
+    });
+
+//Wyłącznie menu mobilnego
+    $('body').on('click', function (e) {
+
+        if (!$(e.target).closest('.nav').length) {
+            $('.mobile-menu').removeClass('mobile-menu--rotate');
+            $('.ul-wrapper').removeClass('menu-toggle');
+        }
+    });
 /// =include scrollTotop.js
 /// =include cycle.js
 /// =include lightbox.js

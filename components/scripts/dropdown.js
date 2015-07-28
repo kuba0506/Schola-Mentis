@@ -16,16 +16,18 @@
             timer_time = 350;
 
         dropdowns.on('click mouseenter mouseleave', function(event) {
-            if (event.type === 'mouseleave') {
-                timer = setTimeout(function() {
-                    if (open) {
-                        open.removeClass(open_class);
-                        open_content.hide();
-                        open_content = open = false;
-                    }
-                }, timer_time);
-            } else {
-                clearTimeout(timer);
+            if ($(window).width() > 768) {
+                if (event.type === 'mouseleave') {
+                    timer = setTimeout(function() {
+                        if (open) {
+                            open.removeClass(open_class);
+                            open_content.hide();
+                            open_content = open = false;
+                        }
+                    }, timer_time);
+                } else {
+                    clearTimeout(timer);
+                }
             }
             if ($(event.target).closest('[data-dropdown-content]').length) {
                 return;
@@ -48,20 +50,22 @@
                     content.hide();
                 }
             } else if (event.type === 'mouseenter') {
-                if (open) {
-                    open.removeClass(open_class);
-                    open_content.hide();
-                    content.show();
-                    link.addClass(open_class);
-                    open = link;
-                    open_content = content;
-                } else {
-                    //dodano 16.01.15
-                    link.addClass(open_class);
-                    content.show();
-                    open = link;
-                    open_content = content;
-                }
+                if ($(window).width() > 768) {
+                    if (open) {
+                        open.removeClass(open_class);
+                        open_content.hide();
+                        content.show();
+                        link.addClass(open_class);
+                        open = link;
+                        open_content = content;
+                    } else {
+                        //dodano 16.01.15
+                        link.addClass(open_class);
+                        content.show();
+                        open = link;
+                        open_content = content;
+                    }
+                }   
             }
         });
 

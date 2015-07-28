@@ -4,20 +4,39 @@
 
 .categories {
   display: block;
+  margin: 0;
+  padding: 0;
+    > li > a {
+      background: url('../images/ico/dot-ico.png') no-repeat 3px 14px; 
+      padding-left: 18px;
+      line-height: 32px;
+    }
   li {
     list-style: none;
+    padding: 0;
   }
 }
+.categories-header {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: $fwb;
+  color: $blueTxt;
+  margin: 0 0 5px;  
+}
   .categories a {
-    color: $color11;
+    color: $blue;
     display: block;
-    padding: 2px 10px;
+    padding: 2px 15px;
+    text-transform: uppercase;
     text-decoration: none;
-    font-size: 18px;
-    line-height: 2;
+    font-size: 14px;
+    @include border-radius(6px);
+    font-weight: $fwb; 
     &:hover {
-      color: $color2;
+      color: $white;
+      background-color: $blue ;
     }
+
   }
   .categories ul {
     display: none;
@@ -27,7 +46,7 @@
     // border-left: 1px solid #EEE;
   }
    .categories ul li {
-    color: $color2;
+    color: $blueTxt;
 
    }
   .categories ul a {
@@ -35,13 +54,23 @@
   }
   .categories .open  a, .categories li.active a {
     font-weight: $fwb;
-    color: $color2;
+    color: $blueTxt;
+  }
+  .categories .open > a {
+    color: $blueTxt; 
+    &:hover {
+      color: $white; 
+    }
   }
   .categories .open  ul a {
-    padding: 0;
+    padding-left: 5px; 
     font-size: 14px;
-    line-height: 27px;
+    line-height: 24px;
     text-transform: uppercase;
+    &:hover {
+      color: $white;
+    }
+    
   }
   // .categories .active > a {
   //   background-color: #EEE;
